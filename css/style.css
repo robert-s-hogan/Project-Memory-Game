@@ -13,6 +13,12 @@ header h1 {
 	align-self: center;
 }
 
+header .moves {
+	display: flex;
+	justify-content: center;
+	
+}
+
 .card-container {
 	padding: 1em;
 }
