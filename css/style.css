@@ -1,8 +1,18 @@
+:root {
+	--white: #F8FFE5;
+	--light-green: #06D6A0;
+	--dark-green: #1B9AAA;
+	--red: #EF476F;
+	--yellow: #FFC43D;
+}
+
 body {
 	margin: 0;
-background: linear-gradient(to bottom right, #06D6A0 , #F8FFE5);
+background: linear-gradient(to bottom right, var(--light-green), var(--white));
 	height: 100vh;
 	font-family: 'Roboto', sans-serif;
+	color: var(--white);
+	background-size: auto;
 }
 
 img {
@@ -13,6 +23,7 @@ header h1 {
 	text-align: center;
 	align-self: center;
 	font-family: 'Varela Round', sans-serif;
+	color: var(--white);
 }
 
 header h3 {
@@ -21,9 +32,17 @@ header h3 {
 
 header .moves {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 0 3em;
 	margin: 0;
+}
+
+header .moves .stars {
+	align-content: 
+}
+
+.moves .icon-color {
+	color: var(--white);
 }
 
 .card-container {
@@ -34,22 +53,25 @@ header .moves {
 	display: flex;
 	flex-direction: flex-start;
 	flex-wrap: nowrap;
-	flex: 1 1 350px;
 	justify-content: center;
 }
 
 .card {
-	background-color: #06D6A0;
-	border: 2px solid #1B9AAA;
+	background-color: var(--light-green);
+	border: 2px solid var(--dark-green);
 	min-width: 48px;
-	min-height: 48px;
+	min-height: 48px;;
 	margin: 1em;
 	border-radius: 10px;
 }
 
+.row > .card {
+	flex: 1 1 20%;
+}
+
 .card:hover {
-	background-color: #1B9AAA;
-	border: 2px solid #FFC43D;
+	background-color: var(--dark-green);
+	border: 2px solid var(--yellow);
 	transition: .5s ease;
 }
 
@@ -59,9 +81,15 @@ header .moves {
 }
 
 @media screen and (min-width: 768px) {
-  
+  .card {
+  	min-height: 96px;
+  	min-width: 96px;
+  }
 }
 
-@media screen and (min-width: 1024px) {
-  
+@media screen and (min-width: 1000px) {
+	.card {
+		min-width: 144px;
+		min-height: 144px;
+	}
 }
