@@ -2,6 +2,7 @@ body {
 	margin: 0;
 background: linear-gradient(to bottom right, red , lightgrey);
 	height: 100vh;
+	font-family: 'Roboto', sans-serif;
 }
 
 img {
@@ -11,6 +12,7 @@ img {
 header h1 {
 	text-align: center;
 	align-self: center;
+	font-family: 'Varela Round', sans-serif;
 }
 
 header h3 {
@@ -39,7 +41,7 @@ header .moves {
 .card {
 	background-color: blue;
 	width: 75px;
-	height: 75px;
+	height: 60px;
 	margin: 1em;
 	border-radius: 10px;
 }
