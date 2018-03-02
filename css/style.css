@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 background: linear-gradient(to bottom right, red , lightgrey);
+	height: 100vh;
 }
 
 img {
@@ -14,18 +15,22 @@ header h1 {
 
 .card-container {
 	padding: 1em;
+}
+
+.card-container .row {
 	display: flex;
 	flex-direction: flex-start;
-	justify-content: space-around;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
+	flex: 1 1 350px;
+	justify-content: center;
 }
 
 .card {
 	background-color: blue;
-	width: 150px;
-	height: 150px;
-	border-radius: 30px;
+	width: 87px;
+	height: 87px;
 	margin: 1em;
+	border-radius: 10px;
 }
 
 .card:hover {
