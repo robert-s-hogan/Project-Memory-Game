@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-background: linear-gradient(to bottom right, red , lightgrey);
+background: linear-gradient(to bottom right, #06D6A0 , #F8FFE5);
 	height: 100vh;
 	font-family: 'Roboto', sans-serif;
 }
@@ -39,16 +39,17 @@ header .moves {
 }
 
 .card {
-	background-color: blue;
-	width: 75px;
-	height: 60px;
+	background-color: #06D6A0;
+	border: 2px solid #1B9AAA;
+	min-width: 48px;
+	min-height: 48px;
 	margin: 1em;
 	border-radius: 10px;
 }
 
 .card:hover {
-	background: linear-gradient(to bottom left, blue, white);
-	transform: scale(1.1);
+	background-color: #1B9AAA;
+	border: 2px solid #FFC43D;
 	transition: .5s ease;
 }
 
