@@ -3,19 +3,26 @@
  */
 const deck = document.querySelector('.deck');
 
-deck.addEventListener('click', function(e) {
-  let cardClicked;
+const cardsOpen = [];
 
-  if(e.target.nodeName == "LI") {
-    cardClicked = e.target;
-    console.log(cardClicked);
-  } else if (e.target.nodeName == "I") {
-    cardClicked = event.target.parentElement;
-  } else {
-    return;
-  }
+deck.addEventListener('click', function(e) {
+    let cardClicked;
+
+    if(e.target.nodeName == "LI") {
+        cardClicked = e.target;
+        console.log(cardClicked);
+    } else if (e.target.nodeName == "I") {
+        cardClicked = event.target.parentElement;
+    } else {
+        return;
+    }
 
   toggleCard(cardClicked);
+  addCard(cardClicked);
+
+  if(cardsOpen.length > 1) {
+    checkMatch();
+  }
 
 });
 
@@ -23,6 +30,8 @@ function toggleCard(card){
     card.classList.toggle('show');
     card.classList.toggle('open');
 }
+
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
