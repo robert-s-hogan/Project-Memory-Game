@@ -9,6 +9,10 @@ deck.addEventListener('click', function(e) {
   if(e.target.nodeName == "LI") {
     cardClicked = e.target;
     console.log(cardClicked);
+  } else if (e.target.nodeName == "I") {
+    cardClicked = event.target.parentElement;
+  } else {
+    return;
   }
 });
 
