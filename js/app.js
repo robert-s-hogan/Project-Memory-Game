@@ -2,7 +2,7 @@
  * Create a list that holds all of your cards
  */
 const deck = document.querySelector('.deck');
-
+const card = document.querySelector('.card');
 const cardsOpen = [];
 
 deck.addEventListener('click', function(e) {
@@ -18,7 +18,6 @@ deck.addEventListener('click', function(e) {
     }
 
   toggleCard(cardClicked);
-  addCard(cardClicked);
 
   if(cardsOpen.length > 1) {
     checkMatch();
@@ -30,7 +29,6 @@ function toggleCard(card){
     card.classList.toggle('show');
     card.classList.toggle('open');
 }
-
 
 /*
  * Display the cards on the page
