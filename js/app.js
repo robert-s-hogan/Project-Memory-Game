@@ -18,6 +18,13 @@ deck.addEventListener('click', function(e) {
         return;
     }
 
+    if(cardClicked.classList.contains('match')){return;}
+
+    if(cardsOpen.length > 0 && cardClicked === cardsOpen[0]) {
+        console.log("Clicked the same card twice");
+        return;
+    }
+
     toggleCard(cardClicked);
     addCard(cardClicked);
 
@@ -42,6 +49,8 @@ function checkMatch() {
 
     if(firstSelection == secondSelection) {
         createMatch();
+    } else {
+        misMatch();
     }
 }
 
@@ -49,7 +58,18 @@ function createMatch() {
     for(let i = 0; i < cardsOpen.length; i++) {
         cardsOpen[i].classList.add('match');
     }
+    resetCardsOpen();
+}
 
+function resetCardsOpen() {
+    cardsOpen.splice(0,2);
+}
+
+function misMatch() {
+    for(let i = 0; i < cardsOpen.length; i++) {
+        toggleCard(cardsOpen[i]);
+    }
+    resetCardsOpen();
 }
 
 /*
