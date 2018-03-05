@@ -3,6 +3,7 @@
  */
 const deck = document.querySelector('.deck');
 const card = document.querySelector('.card');
+
 const cardsOpen = [];
 
 deck.addEventListener('click', function(e) {
@@ -17,17 +18,38 @@ deck.addEventListener('click', function(e) {
         return;
     }
 
-  toggleCard(cardClicked);
+    toggleCard(cardClicked);
+    addCard(cardClicked);
 
-  if(cardsOpen.length > 1) {
-    checkMatch();
-  }
-
+    if(cardsOpen.length > 1) {
+        checkMatch();
+    }
+ 
 });
 
 function toggleCard(card){
     card.classList.toggle('show');
     card.classList.toggle('open');
+}
+
+function addCard(card) {
+    cardsOpen.push(card);
+}
+
+function checkMatch() {
+    let firstSelection = cardsOpen[0].firstChild.classList;
+    let secondSelection = cardsOpen[1].firstChild.classList;
+
+    if(firstSelection == secondSelection) {
+        createMatch();
+    }
+}
+
+function createMatch() {
+    for(let i = 0; i < cardsOpen.length; i++) {
+        cardsOpen[i].classList.add('match');
+    }
+
 }
 
 /*
