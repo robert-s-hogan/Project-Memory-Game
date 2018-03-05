@@ -1,7 +1,17 @@
 /*
  * Create a list that holds all of your cards
  */
-let allCards = document.querySelectorAll(".card");
+const deck = document.querySelector('.deck');
+
+deck.addEventListener('click', function(e) {
+  let cardClicked;
+
+  if(e.target.nodeName == "LI") {
+    cardClicked = e.target;
+    console.log(cardClicked);
+  }
+});
+
 
 /*
  * Display the cards on the page
@@ -25,7 +35,6 @@ function shuffle(array) {
     return array;
 }
 
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -36,18 +45,3 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
-for(var i = 0; i < allCards.length; i++) {
-	allCards[i].addEventListener("click", cardSelected);
-}
-
-let classes = document.querySelectorAll(".card i");
-
-
-function cardSelected () {
-
-	for(var i = 0; i < allCards.length; i++) {
-		console.log(classes[i].className);
-	}
-	// console.log(classes);
-}
