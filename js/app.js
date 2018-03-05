@@ -14,9 +14,15 @@ deck.addEventListener('click', function(e) {
   } else {
     return;
   }
+
+  toggleCard(cardClicked);
+
 });
 
-
+function toggleCard(card){
+    card.classList.toggle('show');
+    card.classList.toggle('open');
+}
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
