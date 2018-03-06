@@ -1,0 +1,154 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ *  Header Styling
+ */
+
+header, h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 630px;
+    min-height: 650px;
+    background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 2em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #168fad;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card:hover {
+    background-color: #eaecc6;
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #2b64e4;
+    cursor: default;
+    color: #eaecc6;
+}
+
+.deck .card.show {
+    font-size: 40px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #e44f2b;
+    font-size: 45px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+#timer {
+    text-align: center;
+}
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+    color: #168FAD;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    color: #168FAD;
+}
+
+/*
+*   Styles for the Win Output
+*/
+#winId {
+    background-color: #168FAD;
+    color: #eaecc6;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+#winHeader {
+    font-size: 6em;
+    padding: 1em;
+}
+
+#winText {
+    font-size: 3em;
+    text-align: center;
+    line-height: 2;
+}
