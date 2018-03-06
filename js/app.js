@@ -18,6 +18,7 @@ const restartBtn = document.querySelector('.restart');
 const winPanel = document.createElement('div');
 const winPanelHeader = document.createElement('h2');
 const winPanelText = document.createElement('p');
+const winLeaderboard = document.createElement('div');
 
 /*
 Variables & Arrays
@@ -226,7 +227,7 @@ function createCard(faIcon){
 */
 function createWinPanel(){
 
-    winPanelHeader.textContent = "You win!";
+    winPanelHeader.textContent = "Way to Finish!";
     winPanelHeader.id = 'winHeader';
     winPanel.appendChild(winPanelHeader);
     winPanelText.id = 'winText';
@@ -238,7 +239,7 @@ function createWinPanel(){
 
 function updateWinPanel(){
 
-    winPanelText.textContent = `You received ${starCount} stars and it took you ${moveCounter} moves! Click Anywhere to Play Again!`;
+    winPanelText.textContent = `You received ${starCount} Star in ${moveCounter} Moves!`;
 }
 
 function showWinPanel(){
