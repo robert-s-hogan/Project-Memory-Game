@@ -194,8 +194,11 @@ header p {
         max-width: 768px;
     }
     .deck .card {
-        height: 145px;
-        width: 145px;
+        min-height: 145px;
+        min-width: 145px;
+        height: 21%;
+        flex: 1 1 21%;
+        margin: 0 1%;
     }
     .deck .card.show {
         font-size: 50px;
@@ -204,10 +207,10 @@ header p {
 
 @media screen and (min-width: 1024px) {
     header h1 {
-        font-size: 5em;
+        font-size: 4em;
     }
     header p {
-        font-size: 2.5em;
+        font-size: 1.75em;
         margin-bottom: 1em;
     }
     .score-panel {
@@ -216,20 +219,23 @@ header p {
     }
     .score-panel .stars,
     .score-panel .restart  {
-        font-size: 3em;
+        font-size: 2em;
     }
     .score-panel #moves,
     .score-panel #timer {
-        font-size: 3em;
+        font-size: 2em;
     }
     .deck {
-        height: 975px;
+        height: 825px;
         margin: 0 1.25em 1.25em;
         max-width: 1024px;
     }
     .deck .card {
-        height: 210px;
-        width: 210px;
+        min-height: 175px;
+        min-width: 175px;
+        height: 21%;
+        flex: 1 1 21%;
+        margin: 0 1%;
     }
     .deck .card.show {
         font-size: 80px;
