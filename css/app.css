@@ -112,7 +112,6 @@ header p {
 .score-panel {
     display: inline-flex;
     justify-content: space-between;
-    text-align: left;
     width: 345px;
     padding: 0 2em;
 }
@@ -160,6 +159,10 @@ header p {
     font-size: 3em;
     text-align: center;
     line-height: 2;
+}
+
+@media screen and (min-width: 375px) {
+
 }
 
 @media screen and (min-width: 768px) {
