@@ -18,7 +18,15 @@ body {
 
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+}
+
+h1 {
     font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 'Lato', sans-serif;
+
 }
 
 .container {
@@ -26,11 +34,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-h3 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
 }
 
 /*
@@ -43,7 +46,11 @@ header, h1, h2, h3, h4, h5 {
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2.25em;
+}
+
+header p {
+    font-size: 1em;
 }
 
 
@@ -108,7 +115,7 @@ header h1 {
     justify-content: space-between;
     text-align: left;
     width: 345px;
-    padding: 0 1em;
+    padding: 0 2em;
 }
 
 .score-panel .stars {
@@ -116,11 +123,6 @@ header h1 {
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
-}
-
-#timer {
-    text-align: center;
-
 }
 
 .score-panel .stars li {
