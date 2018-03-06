@@ -46,6 +46,7 @@ header h1 {
     font-size: 2.5em;
 }
 
+
 /*
  * Styles for the deck of cards
  */
@@ -102,14 +103,12 @@ header h1 {
  * Styles for the Score Panel
  */
 
-#timer {
-    text-align: center;
-}
-
 .score-panel {
+    display: inline-flex;
+    justify-content: space-between;
     text-align: left;
     width: 345px;
-    margin-bottom: 10px;
+    padding: 0 1em;
 }
 
 .score-panel .stars {
@@ -119,6 +118,11 @@ header h1 {
     margin: 0 5px 0 0;
 }
 
+#timer {
+    text-align: center;
+
+}
+
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
@@ -126,10 +130,10 @@ header h1 {
 }
 
 .score-panel .restart {
-    float: right;
     cursor: pointer;
     color: #168FAD;
 }
+
 
 /*
 *   Styles for the Win Output
