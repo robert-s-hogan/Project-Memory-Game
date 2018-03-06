@@ -68,6 +68,7 @@ header p {
     justify-content: space-between;
     align-items: center;
     margin: 0 1em 1em;
+    max-width: 375px;
 }
 
 .deck .card {
@@ -190,6 +191,7 @@ header p {
     .deck {
         height: 675px;
         margin: 0 1em 1em;
+        max-width: 768px;
     }
     .deck .card {
         height: 145px;
@@ -223,6 +225,7 @@ header p {
     .deck {
         height: 975px;
         margin: 0 1.25em 1.25em;
+        max-width: 1024px;
     }
     .deck .card {
         height: 210px;
