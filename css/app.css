@@ -171,7 +171,7 @@ header p {
 
 @media screen and (min-width: 1024px) {
 
-    .deck {
+/*    .deck {
         width: 630px;
         min-height: 650px;
         background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
@@ -218,5 +218,5 @@ header p {
         cursor: default;
         background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
         font-size: 45px;
-    }
+    }*/
 }
