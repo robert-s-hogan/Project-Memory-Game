@@ -298,6 +298,8 @@ function updateTimer(){
     min = (totalSeconds > 60) ? Math.floor(totalSeconds/60) : 0;
 
     // Update Time to Clock
+    timerOutput.classList.add("animated", "pulse");
+    timerOutput.style.color = "#d13e36";
     timeInSec.textContent = (sec < 10) ? "0" + sec : sec;
     timeInMin.textContent = min;
 }
