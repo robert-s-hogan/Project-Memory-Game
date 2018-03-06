@@ -363,7 +363,7 @@ function numOfMoves(){
     moveCounter++;
     movesOutput.textContent = moveCounter;
 
-    if(moveCounter === 16){
+    if(moveCounter === 15){
         starCount = 2;
         toggleStarsOff(2);
     }
@@ -373,7 +373,7 @@ function numOfMoves(){
         toggleStarsOff(1);
     }
 
-    if(moveCounter === 24){
+    if(moveCounter === 25){
         starCount = 0;
         toggleStarsOff(0);
     }
