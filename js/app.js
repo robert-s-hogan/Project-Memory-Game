@@ -298,6 +298,8 @@ function updateTimer(){
     min = (totalSeconds > 60) ? Math.floor(totalSeconds/60) : 0;
 
     // Update Time to Clock
+    timerOutput.classList.add("animated", "pulse");
+    timerOutput.style.color = "#d13e36";
     timeInSec.textContent = (sec < 10) ? "0" + sec : sec;
     timeInMin.textContent = min;
 }
@@ -363,7 +365,7 @@ function numOfMoves(){
     moveCounter++;
     movesOutput.textContent = moveCounter;
 
-    if(moveCounter === 16){
+    if(moveCounter === 15){
         starCount = 2;
         toggleStarsOff(2);
     }
@@ -373,7 +375,7 @@ function numOfMoves(){
         toggleStarsOff(1);
     }
 
-    if(moveCounter === 24){
+    if(moveCounter === 25){
         starCount = 0;
         toggleStarsOff(0);
     }
