@@ -46,8 +46,8 @@ header, h1, h2, h3 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 630px;
+    min-height: 650px;
     background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
     padding: 32px;
     border-radius: 10px;
@@ -56,7 +56,7 @@ header, h1, h2, h3 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 3em;
+    margin: 0 0 2em;
 }
 
 .deck .card {
