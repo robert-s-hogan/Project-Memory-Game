@@ -39,6 +39,11 @@ h3 {
 
 header, h1, h2, h3, h4, h5 {
     margin: 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
 }
 
 /*
@@ -46,22 +51,21 @@ header, h1, h2, h3, h4, h5 {
  */
 
 .deck {
-    width: 630px;
-    min-height: 650px;
+    height: 400px;
     background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
-    padding: 32px;
+    padding: 1em;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 2em;
+    margin: 1em;
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 70px;
+    width: 70px;
     background: #168fad;
     font-size: 0;
     color: #ffffff;
@@ -85,13 +89,13 @@ header, h1, h2, h3, h4, h5 {
 }
 
 .deck .card.show {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .deck .card.match {
     cursor: default;
-    background: #e44f2b;
-    font-size: 45px;
+    background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
+    font-size: 35px;
 }
 
 /*
@@ -151,4 +155,56 @@ header, h1, h2, h3, h4, h5 {
     font-size: 3em;
     text-align: center;
     line-height: 2;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .deck {
+        width: 630px;
+        min-height: 650px;
+        background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
+        padding: 32px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 2em;
+    }
+
+    .deck .card {
+        height: 125px;
+        width: 125px;
+        background: #168fad;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+
+    .deck .card:hover {
+        background-color: #eaecc6;
+    }
+
+    .deck .card.open {
+        transform: rotateY(0);
+        background: #2b64e4;
+        cursor: default;
+        color: #eaecc6;
+    }
+
+    .deck .card.show {
+        font-size: 40px;
+    }
+
+    .deck .card.match {
+        cursor: default;
+        background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
+        font-size: 45px;
+    }
 }
