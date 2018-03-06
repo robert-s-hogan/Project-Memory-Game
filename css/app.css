@@ -60,19 +60,22 @@ header p {
 .deck {
     height: 400px;
     background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
-    padding: 1em;
+    padding: 0 1%;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1em;
+    margin: 0 1em 1em;
 }
 
 .deck .card {
-    height: 70px;
-    width: 70px;
+    min-height: 70px;
+    min-width: 70px;
+    height: 21%;
+    flex: 1 1 21%;
+    margin: 0 1%;
     background: #168fad;
     font-size: 0;
     color: #ffffff;
@@ -82,6 +85,10 @@ header p {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck:before {
+    content: "";
 }
 
 .deck .card:hover {
@@ -182,7 +189,7 @@ header p {
     }
     .deck {
         height: 675px;
-        margin: 0 1em;
+        margin: 0 1em 1em;
     }
     .deck .card {
         height: 145px;
@@ -215,7 +222,7 @@ header p {
     }
     .deck {
         height: 975px;
-        margin: 0 1em;
+        margin: 0 1.25em 1.25em;
     }
     .deck .card {
         height: 210px;
