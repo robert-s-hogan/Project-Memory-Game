@@ -18,7 +18,7 @@ const restartBtn = document.querySelector('.restart');
 const winPanel = document.createElement('div');
 const winPanelHeader = document.createElement('h2');
 const winPanelText = document.createElement('p');
-const winLeaderboard = document.createElement('div');
+const winLeaderboard = document.createElement('table');
 
 /*
 Variables & Arrays
@@ -232,6 +232,13 @@ function createWinPanel(){
     winPanel.appendChild(winPanelHeader);
     winPanelText.id = 'winText';
     winPanel.appendChild(winPanelText);
+
+    winPanel.appendChild(winLeaderboard);
+    winLeaderboard.textContent = "All Time Best Players";
+    winLeaderboard.id = 'leaderBoard';
+    winLeaderboard.style.backgroundColor = "eaecc6";
+    winLeaderboard.color = "#168FAD";
+
     winPanel.id = 'winId';
     winPanel.classList.add("animated", "flash");
     winPanel.classList.add('container');
