@@ -5,7 +5,7 @@ let leaderBoard = [	"Robert", "3", "16", "0:25",
 					"Dominic", "2", "20", "0:30" ];
 const leaderBoardHeaders = ["Name", "Total Stars", "Total Moves", "Time"];
 
-function makeGrid() {
+function createLeaderboard() {
 
 	var table = document.createElement('table');
 	table.classList.add("table", "table-sm", "table-hover");
@@ -43,7 +43,7 @@ function makeGrid() {
 	document.body.appendChild(table);
 };
 
-function fillTables() {
+function fillLeaderboard() {
 
 	let ths = document.querySelectorAll("th");
 	for(let i = 0; i < leaderBoardHeaders.length; i++) {
@@ -56,5 +56,5 @@ function fillTables() {
 	}
 }
 
-makeGrid();
-fillTables();
+createLeaderboard();
+fillLeaderboard();

@@ -37,6 +37,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
 }
 
@@ -167,6 +168,14 @@ header p {
     font-size: 3em;
     text-align: center;
     line-height: 2;
+}
+
+#winId table {
+    font-size: 39px;
+    text-align: center;
+}
+#winId td {
+    border: 2px solid black;
 }
 
 
