@@ -1,14 +1,19 @@
 const container = document.querySelector('container');
 
-let leaderBoard = [	"Robert", "3", "16", "0:25" ];
+let leaderBoard = [	"Robert", "3", "16", "0:25", 
+					"Jessica", "3", "16", "0:25",
+					"Dominic", "2", "20", "0:30" ];
 const leaderBoardHeaders = ["Name", "Total Stars", "Total Moves", "Time"];
 
 function makeGrid() {
 
-var table = document.createElement('table');
+	var table = document.createElement('table');
+	table.classList.add("table", "table-sm", "table-hover");
 
 	var tHead = document.createElement('thead');
+	// tHead.classList.add("thead-dark");
 	var tr = document.createElement("tr");
+	tr.classList.add('table-info');
 
 	for(let i = 0; i < leaderBoardHeaders.length; i++) {
 		let th = document.createElement('th');
