@@ -252,7 +252,7 @@ function createWinPanel(){
 function createLeaderboard() {
 
     var table = document.createElement('table');
-    table.classList.add("table", "table-sm", "table-hover");
+    table.classList.add("table", "table-sm", "table-hover", "table-striped");
 
     var tHead = document.createElement('thead');
     // tHead.classList.add("thead-dark");
@@ -262,6 +262,7 @@ function createLeaderboard() {
     for(let i = 0; i < leaderBoardHeaders.length; i++) {
         let th = document.createElement('th');
         let thText = document.createTextNode('');
+
         th.appendChild(thText);
         tr.appendChild(th);
         tHead.appendChild(tr);
@@ -286,6 +287,17 @@ function createLeaderboard() {
     }
     winPanel.appendChild(table);
 };
+
+function fillLeaderboard() {
+    let ths = document.querySelectorAll("th");
+    for(let i = 0; i < leaderBoardHeaders.length; i++) {
+        ths[i].innerHTML = leaderBoardHeaders[i];
+    }
+    let tds = document.querySelectorAll("td");
+    for(let i = 0; i < leaderBoard.length; i++) {
+        tds[i].innerHTML = leaderBoard[i];
+    }
+}
 
 function updateWinPanel(){
 

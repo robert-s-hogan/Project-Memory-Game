@@ -150,32 +150,29 @@ header p {
 #winId {
     background-color: #168FAD;
     color: #eaecc6;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
     text-align: center;
 }
 
 #winId #winHeader {
-    font-size: 6em;
-    padding: 1em;
+    font-size: 4em;
 }
 
 #winId #winText {
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     line-height: 2;
 }
 
-#winId table {
-    font-size: 39px;
-    text-align: center;
+#winId th {
+    color: black;
 }
+
 #winId td {
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 
