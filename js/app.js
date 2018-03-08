@@ -2,6 +2,7 @@
 const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
 const header = document.querySelector('.header');
+const desc = document.querySelector('.description');
 
 /*
     Clock Objects & Score Panel Output
@@ -22,11 +23,7 @@ const winLeaderboard = document.createElement('table');
 /*
     Temporary Arrays to fill LeaderBoard Table
 */
-let leaderBoard = [ 
-    'Robert', 3, 16, '0:25',
-    'Jessica', 3, 16, '0:25',
-    'Dominic', 2, 20, '0:30'
-];
+let leaderBoard = 2;
 
 let leaderBoardArray = {
     name: '',
@@ -116,6 +113,18 @@ let cardClicked;
     // Check for win condition
     checkForWin();
 });
+
+function userInput() {
+
+    var userName = prompt("Please enter your name");
+    if (userName == null || userName == "") {
+        desc.textContent = "Welcome No Name";
+    } else {
+        desc.textContent = "Welcome " + userName;
+    }
+    desc.style.color = "red";
+    desc.classList.add("animated", "jackInTheBox")
+}
 
 /*
     Resets Deck and Score Panel if restartBtn was clicked
@@ -279,7 +288,7 @@ function createLeaderboard() {
 
     let tBody = document.createElement('tbody');
     
-    for (let i = 0; i < leaderBoard.length + 1; i++) {
+    for (let i = 0; i < leaderBoard; i++) {
         let tr = document.createElement('tr');
         tr.id = ('row' + i);   
 
@@ -476,6 +485,7 @@ function shuffle(array) {
 }
 
 // Call Game Functions on Page Load
+userInput();
 createWinPanel();
 createClock();
 gameInit();
