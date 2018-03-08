@@ -28,6 +28,13 @@ let leaderBoard = [
     'Dominic', 2, 20, '0:30'
 ];
 
+let leaderBoardArray = {
+    name: '',
+    totalStars: '',
+    totalMoves: '',
+    time: ''
+};
+
 const leaderBoardHeaders = [
     'Name',
     'Total Stars',
