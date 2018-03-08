@@ -76,14 +76,10 @@ let cardClicked;
     }
 
     // Ignore click if Card has been matched
-    if(cardClicked.classList.contains('match')) {
-        return;
-    }
+    if(cardClicked.classList.contains('match')) { return;}
 
     // Ignore double-clicks and self matches
-    if(openCards.length > 0 && cardClicked === openCards[0]){
-        return;
-    }
+    if(openCards.length > 0 && cardClicked === openCards[0]){ return;}
 
     // Start new pair and reset previous clicks
     if(timeout != null){
