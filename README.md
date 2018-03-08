@@ -26,13 +26,12 @@
 4. Rinse and Repeat
 
 ## Known Issues
-- Submit Button not resetting after click
+- Game still in development
 
 ## Improvements
-- Being able to hold the click button down and move through multiples cells and paint at the same time
-- Width and Height Restrictions to fit page
-- Cross-Browser Compatability (Safari doesn't load the Color Picker)
-- Preset Images already set :sweat_smile:
+- Add an function to get half stars too
+- Add Sounds to cards flipping and Game Won
+- Add Container animation when a Card Matches
 
 ## How to Contribute
 
