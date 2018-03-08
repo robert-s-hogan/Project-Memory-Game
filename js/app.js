@@ -23,16 +23,16 @@ const winLeaderboard = document.createElement('table');
     Temporary Arrays to fill LeaderBoard Table
 */
 let leaderBoard = [ 
-    "Robert", 3, 16, "0:25",
-    "Jessica", 3, 16, "0:25",
-    "Dominic", 2, 20, "0:30"
+    'Robert', 3, 16, '0:25',
+    'Jessica', 3, 16, '0:25',
+    'Dominic', 2, 20, '0:30'
 ];
 
 const leaderBoardHeaders = [
-    "Name",
-    "Total Stars",
-    "Total Moves",
-    "Time"
+    'Name',
+    'Total Stars',
+    'Total Moves',
+    'Time'
 ];
 
 /*
@@ -62,9 +62,9 @@ deck.addEventListener('click', function(e){
 let cardClicked;
 
     // Check to see if the card area was clicked
-    if(e.target.nodeName == "LI") {
+    if(e.target.nodeName == 'LI') {
         cardClicked = e.target;
-    } else if (e.target.nodeName == "I") {
+    } else if (e.target.nodeName == 'I') {
         cardClicked = e.target.parentElement;
     } else {
         return; // If there is a click outside of the card area
@@ -211,7 +211,7 @@ function createArrayOfCards(){
 
     cards = [];
     // All Font Awesome Icons For Card Creation
-    const cardTypes = ["fa-bomb", "fa-paper-plane-o", "fa-diamond", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle"];
+    const cardTypes = ['fa-bomb', 'fa-paper-plane-o', 'fa-diamond', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle'];
 
     // Add 2 of Each Type of Card to Deck
     for(let i = 0; i < cardTypes.length; i++){
@@ -221,14 +221,14 @@ function createArrayOfCards(){
 }
 
 /*
-    Creates Individual Card with New Elements and "fa" class in the I Class
+    Creates Individual Card with New Elements and 'fa' class in the I Class
 */
 function createCard(faIcon){
 
-    let cardElement = document.createElement("li");
+    let cardElement = document.createElement('li');
     cardElement.classList.add('card');
 
-    let faDefault = document.createElement("i");
+    let faDefault = document.createElement('i');
     faDefault.classList.add('fa');
 
     faDefault.classList.add(faIcon);
@@ -242,7 +242,7 @@ function createCard(faIcon){
 */
 function createWinPanel(){
 
-    winPanelHeader.textContent = "Way to Finish!";
+    winPanelHeader.textContent = 'Way to Finish!';
     winPanelHeader.id = 'winHeader';
     winPanel.appendChild(winPanelHeader);
     winPanelText.id = 'winText';
@@ -251,17 +251,17 @@ function createWinPanel(){
     createLeaderboard();
 
     winPanel.id = 'winId';
-    winPanel.classList.add("animated", "flash");
+    winPanel.classList.add('animated', 'flash');
     winPanel.classList.add('container');
 }
 
 function createLeaderboard() {
 
     let table = document.createElement('table');
-    table.classList.add("table", "table-sm", "table-hover", "table-striped");
+    table.classList.add('table', 'table-sm', 'table-hover', 'table-striped');
 
     let tHead = document.createElement('thead');
-    let tr = document.createElement("tr");
+    let tr = document.createElement('tr');
     tr.classList.add('table-info');
 
     for(let i = 0; i < leaderBoardHeaders.length; i++) {
@@ -278,7 +278,7 @@ function createLeaderboard() {
     
     for (let i = 0; i < leaderBoard.length + 1; i++) {
         let tr = document.createElement('tr');
-        tr.id = ("row" + i);   
+        tr.id = ('row' + i);   
 
         for(let j = 0; j < leaderBoardHeaders.length; j++) {
     
@@ -294,11 +294,11 @@ function createLeaderboard() {
 }
 
 function fillLeaderboard() {
-    let ths = document.querySelectorAll("th");
+    let ths = document.querySelectorAll('th');
     for(let i = 0; i < leaderBoardHeaders.length; i++) {
         ths[i].innerHTML = leaderBoardHeaders[i];
     }
-    let tds = document.querySelectorAll("td");
+    let tds = document.querySelectorAll('td');
     for(let i = 0; i < leaderBoard.length; i++) {
         tds[i].innerHTML = leaderBoard[i];
     }
@@ -333,7 +333,7 @@ function resetGameElementsAfterWin(){
 function createClock(){
 
     timeInMin.textContent = min;
-    timeInSec.textContent = sec + "0";
+    timeInSec.textContent = sec + '0';
 
     let timerSpacer = document.createElement('span');
     timerSpacer.textContent = ':';
@@ -367,15 +367,15 @@ function updateTimer(){
     min = (totalSeconds > 60) ? Math.floor(totalSeconds/60) : 0;
 
     // Update Time to Clock
-    timerOutput.classList.add("animated", "pulse");
-    timerOutput.style.color = "#d13e36";
-    timeInSec.textContent = (sec < 10) ? "0" + sec : sec;
+    timerOutput.classList.add('animated', 'pulse');
+    timerOutput.style.color = '#d13e36';
+    timeInSec.textContent = (sec < 10) ? '0' + sec : sec;
     timeInMin.textContent = min;
 }
 
 function clearTimer(){
-    timeInMin.textContent = "0";
-    timeInSec.textContent = "00";
+    timeInMin.textContent = '0';
+    timeInSec.textContent = '00';
 }
 
 /*
