@@ -118,11 +118,11 @@ function userInput() {
 
     var userName = prompt("Please enter your name");
     if (userName == null || userName == "") {
-        desc.textContent = "Welcome No Name";
+        desc.textContent = "Welcome No Name!";
     } else {
-        desc.textContent = "Welcome " + userName;
+        desc.textContent = "Welcome " + userName + "!";
     }
-    desc.style.color = "red";
+    desc.style.color = "#e44f2b";
     desc.classList.add("animated", "jackInTheBox")
 }
 
@@ -137,6 +137,7 @@ restartBtn.addEventListener('click', function(event){
     
     stopTimer();
     gameInit();
+    userInput();
 });
 
 winPanel.addEventListener('click', function(event){
