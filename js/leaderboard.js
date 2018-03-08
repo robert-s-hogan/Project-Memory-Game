@@ -1,9 +1,23 @@
 const container = document.querySelector('container');
+const desc = document.querySelector('.description');
 
 let leaderBoard = [	"Robert", "3", "16", "0:25", 
 					"Jessica", "3", "16", "0:25",
 					"Dominic", "2", "20", "0:30" ];
 const leaderBoardHeaders = ["Name", "Total Stars", "Total Moves", "Time"];
+
+function userInput() {
+
+    let userName = prompt("Please enter your name");
+    
+    if (userName == null || userName == "") {
+        desc.textContent = "Welcome No Name!";
+    } else {
+        desc.textContent = "Welcome " + userName + "!";
+    }
+    desc.style.color = "#e44f2b";
+    desc.classList.add("animated", "jackInTheBox")
+}
 
 function createLeaderboard() {
 
@@ -56,5 +70,6 @@ function fillLeaderboard() {
 	}
 }
 
+userInput();
 createLeaderboard();
 fillLeaderboard();

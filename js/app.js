@@ -116,7 +116,8 @@ let cardClicked;
 
 function userInput() {
 
-    var userName = prompt("Please enter your name");
+    let userName = prompt("Please enter your name");
+    
     if (userName == null || userName == "") {
         desc.textContent = "Welcome No Name!";
     } else {
