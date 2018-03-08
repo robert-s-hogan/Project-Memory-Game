@@ -20,10 +20,10 @@
 2. Or Click Live Working Version [here](https://robert-s-hogan.github.io/Project-Memory-Game/)
 
 ## How to Play
-1. To start the game pick any card.  The timer will start when you select your first card.
+1. To start the game pick any card :flower_playing_cards: then the timer will start when you select your first card.
 2. Match cards with one another until all cards are matched.
 3. Click the Restart Icon above the Card Section to play again!
-4. Rinse and Repeat
+4. Rinse and Repeat :video_game:
 
 ## Known Issues
 - Game still in development
