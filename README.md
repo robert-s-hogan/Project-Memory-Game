@@ -5,6 +5,10 @@
 
 * [My Process](#my-process)
 * [How to Run](#how-to-run)
+* [How to Play](#how-to-play)
+* [Known Issues](#known-issues)
+* [Improvements](#improvements)
+* [How to Contribute](#how-to-contribute)
 
 
 ## My Process
@@ -15,7 +19,7 @@
 - Then Open `index.html` 
 2. Or Click Live Working Version [here](https://robert-s-hogan.github.io/Project-Memory-Game/)
 
-## How to Play Project Memory Game
+## How to Play
 1. To start the game pick any card.  The timer will start when you select your first card.
 2. Match cards with one another until all cards are matched.
 3. Click the Restart Icon above the Card Section to play again!
