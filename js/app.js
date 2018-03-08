@@ -65,7 +65,7 @@ let cardClicked;
     // Start Clock
     if(start < 1) {
         startTimer();
-    ;}
+    }
 
     // Ignore click if Card has been matched
     if(cardClicked.classList.contains('match')) {
@@ -242,7 +242,6 @@ function createWinPanel(){
 
     createLeaderboard();
 
-
     winPanel.id = 'winId';
     winPanel.classList.add("animated", "flash");
     winPanel.classList.add('container');
@@ -254,7 +253,6 @@ function createLeaderboard() {
     table.classList.add("table", "table-sm", "table-hover", "table-striped");
 
     let tHead = document.createElement('thead');
-    // tHead.classList.add("thead-dark");
     let tr = document.createElement("tr");
     tr.classList.add('table-info');
 
@@ -285,7 +283,7 @@ function createLeaderboard() {
         table.appendChild(tBody);
     }
     winPanel.appendChild(table);
-};
+}
 
 function fillLeaderboard() {
     let ths = document.querySelectorAll("th");
