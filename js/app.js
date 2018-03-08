@@ -1,10 +1,10 @@
 // Main Objects to work with
 const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
-const header = document.querySelector('.header')
+const header = document.querySelector('.header');
 
 /*
-Clock Objects & Score Panel Output
+    Clock Objects & Score Panel Output
 */
 const timerOutput = document.querySelector('#timer');
 const clock = document.createElement('div');
@@ -14,7 +14,6 @@ const scorePanel = document.querySelector('.score-panel');
 const movesOutput = document.querySelector('.moves');
 const restartBtn = document.querySelector('.restart');
 
-
 const winPanel = document.createElement('div');
 const winPanelHeader = document.createElement('h2');
 const winPanelText = document.createElement('p');
@@ -23,13 +22,13 @@ const winLeaderboard = document.createElement('table');
 /*
     Temporary Arrays to fill LeaderBoard Table
 */
-let leaderBoard = [ "Robert", "3", "16", "0:25", 
+let leaderBoard = [ "Robert", "3", "16", "0:25",
                     "Jessica", "3", "16", "0:25",
                     "Dominic", "2", "20", "0:30" ];
 const leaderBoardHeaders = ["Name", "Total Stars", "Total Moves", "Time"];
 
 /*
-Variables & Arrays
+    Variables & Arrays
 */
 let cards = [];
 const openCards = [];
@@ -41,7 +40,7 @@ let starElement = scorePanel.querySelectorAll('i');
 let starCount = 3;
 
 /*
-Clock Variables
+    Clock Variables
 */
 let start = 0;
 let currentTime = 0;
@@ -49,15 +48,15 @@ let min = 0;
 let sec = 0;
 
 /*
-Main Event Listener
+    Main Event Listener
 */
 deck.addEventListener('click', function(e){
 let cardClicked;
 
     // Check to see if the card area was clicked
-    if(e.target.nodeName == "LI") { 
+    if(e.target.nodeName == "LI") {
         cardClicked = e.target;
-    } else if (e.target.nodeName == "I") { 
+    } else if (e.target.nodeName == "I") {
         cardClicked = e.target.parentElement;
     } else {
         return; // If there is a click outside of the card area
@@ -65,12 +64,12 @@ let cardClicked;
 
     // Start Clock
     if(start < 1) {
-        startTimer()
+        startTimer();
     ;}
 
     // Ignore click if Card has been matched
-    if(cardClicked.classList.contains('match')) { 
-        return; 
+    if(cardClicked.classList.contains('match')) {
+        return;
     }
 
     // Ignore double-clicks and self matches
@@ -173,9 +172,9 @@ function setMatchingCards(){
 }
 
 /*
-  Rejects Cards with Animation then Hides Cards  
+    Rejects Cards with Animation then Hides Cards
 */
-function badMatch() {
+function badMatch(){
 
     for(let i = 0; i < openCards.length; i++){
         openCards[i].classList.add('animated', 'jello');
@@ -301,7 +300,7 @@ function fillLeaderboard() {
 
 function updateWinPanel(){
 
-    winPanelText.textContent = `You received ${starCount} Star in ${moveCounter} Moves!`;
+    winPanelText.textContent = `You received ${starCount} Star in ${moveCounter} Moves and ${min}minutes and ${sec} seconds!`;
 }
 
 function showWinPanel(){
