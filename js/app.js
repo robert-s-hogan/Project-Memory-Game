@@ -217,10 +217,10 @@ function createArrayOfCards(){
 */
 function createCard(faIcon){
 
-    var cardElement = document.createElement("li");
+    let cardElement = document.createElement("li");
     cardElement.classList.add('card');
 
-    var faDefault = document.createElement("i");
+    let faDefault = document.createElement("i");
     faDefault.classList.add('fa');
 
     faDefault.classList.add(faIcon);
@@ -250,12 +250,12 @@ function createWinPanel(){
 
 function createLeaderboard() {
 
-    var table = document.createElement('table');
+    let table = document.createElement('table');
     table.classList.add("table", "table-sm", "table-hover", "table-striped");
 
-    var tHead = document.createElement('thead');
+    let tHead = document.createElement('thead');
     // tHead.classList.add("thead-dark");
-    var tr = document.createElement("tr");
+    let tr = document.createElement("tr");
     tr.classList.add('table-info');
 
     for(let i = 0; i < leaderBoardHeaders.length; i++) {
@@ -268,16 +268,16 @@ function createLeaderboard() {
         table.appendChild(tHead);
     }
 
-    var tBody = document.createElement('tbody');
+    let tBody = document.createElement('tbody');
     
-    for (var i = 0; i < leaderBoard.length + 1; i++) {
-        var tr = document.createElement('tr');
+    for (let i = 0; i < leaderBoard.length + 1; i++) {
+        let tr = document.createElement('tr');
         tr.id = ("row" + i);   
 
         for(let j = 0; j < leaderBoardHeaders.length; j++) {
     
-            var td = document.createElement('td');
-            var text1 = document.createTextNode('');
+            let td = document.createElement('td');
+            let text1 = document.createTextNode('');
             td.appendChild(text1);
             tr.appendChild(td);
         }
@@ -451,7 +451,7 @@ function toggleStarsOff(index){
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
 
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
 
