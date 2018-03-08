@@ -19,7 +19,21 @@ const winPanelHeader = document.createElement('h2');
 const winPanelText = document.createElement('p');
 const winLeaderboard = document.createElement('table');
 
-const leaderBoardHeaders = ["Name", "Total Stars", "Total Moves", "Time"];
+/*
+    Temporary Arrays to fill LeaderBoard Table
+*/
+let leaderBoard = [ 
+    "Robert", 3, 16, "0:25",
+    "Jessica", 3, 16, "0:25",
+    "Dominic", 2, 20, "0:30"
+];
+
+const leaderBoardHeaders = [
+    "Name",
+    "Total Stars",
+    "Total Moves",
+    "Time"
+];
 
 /*
     Variables & Arrays
@@ -292,9 +306,8 @@ function fillLeaderboard() {
 
 function updateWinPanel(){
 
-    winPanelText.textContent = `You received ${starCount} Star ` +
-        `in ${moveCounter} Moves and ${min}minutes and ${sec} seconds!`;
-
+    winPanelText.textContent = `You received ${starCount} Star in ` +
+        `${moveCounter} Moves and ${min}:${sec} seconds!`;
 }
 
 function showWinPanel(){
