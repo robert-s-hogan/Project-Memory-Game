@@ -6,17 +6,19 @@ let leaderBoard = [	"Robert", "3", "16", "0:25",
 					"Dominic", "2", "20", "0:30" ];
 const leaderBoardHeaders = ["Name", "Total Stars", "Total Moves", "Time"];
 
+const findModal = document.getElementById("myModal");
+findModal.addEventListener("load", userInput);
+
+
 function userInput() {
 
-    let userName = prompt("Please enter your name");
-    
+	console.log("UserInput() success");
+    let userName;
     if (userName == null || userName == "") {
         desc.textContent = "Welcome No Name!";
     } else {
         desc.textContent = "Welcome " + userName + "!";
     }
-    desc.style.color = "#e44f2b";
-    desc.classList.add("animated", "jackInTheBox")
 }
 
 function createLeaderboard() {
@@ -71,5 +73,5 @@ function fillLeaderboard() {
 }
 
 userInput();
-createLeaderboard();
+// createLeaderboard();
 fillLeaderboard();
