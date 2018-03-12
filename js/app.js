@@ -137,8 +137,9 @@ restartBtn.addEventListener('click', function(event){
     }
     
     stopTimer();
+    clearOpenArray();
     gameInit();
-    userInput();
+    // userInput();
 });
 
 winPanel.addEventListener('click', function(event){
@@ -487,7 +488,7 @@ function shuffle(array) {
 }
 
 // Call Game Functions on Page Load
-userInput();
+// userInput();
 createWinPanel();
 createClock();
 gameInit();
