@@ -388,17 +388,17 @@ function numOfMoves(){
     movesOutput.textContent = moveCounter;
 
     if(moveCounter === 15){
-        starCount = 2;
+        starCount = 3;
         toggleStarsOff(2);
     }
 
     if(moveCounter === 20){
-        starCount = 1;
+        starCount = 2;
         toggleStarsOff(1);
     }
 
     if(moveCounter === 25){
-        starCount = 0;
+        starCount = 1;
         toggleStarsOff(0);
     }
 }
