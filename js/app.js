@@ -114,19 +114,6 @@ let cardClicked;
     checkForWin();
 });
 
-function userInput() {
-
-    let userName = prompt("Please enter your name");
-    
-    if (userName == null || userName == "") {
-        desc.textContent = "Welcome No Name!";
-    } else {
-        desc.textContent = "Welcome " + userName + "!";
-    }
-    desc.style.color = "#e44f2b";
-    desc.classList.add("animated", "jackInTheBox")
-}
-
 /*
     Resets Deck and Score Panel if restartBtn was clicked
 */
@@ -139,7 +126,6 @@ restartBtn.addEventListener('click', function(event){
     stopTimer();
     clearOpenArray();
     gameInit();
-    // userInput();
 });
 
 winPanel.addEventListener('click', function(event){
@@ -263,14 +249,14 @@ function createWinPanel(){
     winPanelText.id = 'winText';
     winPanel.appendChild(winPanelText);
 
-    createLeaderboard();
+    createModal();
 
     winPanel.id = 'winId';
     winPanel.classList.add('animated', 'flash');
     winPanel.classList.add('container');
 }
 
-function createLeaderboard() {
+function createModal() {
 
     let table = document.createElement('table');
     table.classList.add('table', 'table-sm', 'table-hover', 'table-striped');
@@ -488,7 +474,6 @@ function shuffle(array) {
 }
 
 // Call Game Functions on Page Load
-// userInput();
 createWinPanel();
 createClock();
 gameInit();
