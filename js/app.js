@@ -15,29 +15,10 @@ const scorePanel = document.querySelector('.score-panel');
 const movesOutput = document.querySelector('.moves');
 const restartBtn = document.querySelector('.restart');
 
-const winPanel = document.createElement('div');
-const winPanelHeader = document.createElement('h2');
+const winPanel = document.querySelector('#winPanel');
 const winPanelText = document.createElement('p');
-const winLeaderboard = document.createElement('table');
-
-/*
-    Temporary Arrays to fill LeaderBoard Table
-*/
-let leaderBoard = 2;
-
-let leaderBoardArray = {
-    name: '',
-    totalStars: '',
-    totalMoves: '',
-    time: ''
-};
-
-const leaderBoardHeaders = [
-    'Name',
-    'Total Stars',
-    'Total Moves',
-    'Time'
-];
+const playAgain = document.createElement('button');
+const closeGame = document.createElement('button');
 
 /*
     Variables & Arrays
@@ -124,6 +105,7 @@ restartBtn.addEventListener('click', function(event){
     }
     
     stopTimer();
+
     clearOpenArray();
     gameInit();
 });
@@ -243,72 +225,31 @@ function createCard(faIcon){
 */
 function createWinPanel(){
 
-    winPanelHeader.textContent = 'Way to Finish!';
-    winPanelHeader.id = 'winHeader';
-    winPanel.appendChild(winPanelHeader);
+    const modalContent = document.createElement('div');
+    const spanClose = document.createElement('span');
+
+    modalContent.classList.add('modal-content');
+    winPanel.appendChild(modalContent);
+
+    spanClose.classList.add('close');
+    modalContent.appendChild(spanClose);
     winPanelText.id = 'winText';
-    winPanel.appendChild(winPanelText);
-
-    createModal();
-
-    winPanel.id = 'winId';
+    modalContent.appendChild(winPanelText);
+    playAgain.id = "playBtn";
+    modalContent.appendChild(playAgain);
+    closeGame.id = "closeBtn";
+    modalContent.appendChild(closeGame);
+    winPanel.id = 'winPanel';
     winPanel.classList.add('animated', 'flash');
     winPanel.classList.add('container');
-}
-
-function createModal() {
-
-    let table = document.createElement('table');
-    table.classList.add('table', 'table-sm', 'table-hover', 'table-striped');
-
-    let tHead = document.createElement('thead');
-    let tr = document.createElement('tr');
-    tr.classList.add('table-info');
-
-    for(let i = 0; i < leaderBoardHeaders.length; i++) {
-        let th = document.createElement('th');
-        let thText = document.createTextNode('');
-
-        th.appendChild(thText);
-        tr.appendChild(th);
-        tHead.appendChild(tr);
-        table.appendChild(tHead);
-    }
-
-    let tBody = document.createElement('tbody');
-    
-    for (let i = 0; i < leaderBoard; i++) {
-        let tr = document.createElement('tr');
-        tr.id = ('row' + i);   
-
-        for(let j = 0; j < leaderBoardHeaders.length; j++) {
-    
-            let td = document.createElement('td');
-            let text1 = document.createTextNode('');
-            td.appendChild(text1);
-            tr.appendChild(td);
-        }
-        tBody.appendChild(tr);
-        table.appendChild(tBody);
-    }
-    winPanel.appendChild(table);
-}
-
-function fillLeaderboard() {
-    let ths = document.querySelectorAll('th');
-    for(let i = 0; i < leaderBoardHeaders.length; i++) {
-        ths[i].innerHTML = leaderBoardHeaders[i];
-    }
-    let tds = document.querySelectorAll('td');
-    for(let i = 0; i < leaderBoard.length; i++) {
-        tds[i].innerHTML = leaderBoard[i];
-    }
 }
 
 function updateWinPanel(){
 
     winPanelText.textContent = `You received ${starCount} Star in ` +
-        `${moveCounter} Moves and ${min}:${sec} seconds!`;
+        `${moveCounter} Moves in ${min}:${sec} seconds!`;
+    playAgain.textContent = `Play Again?`;
+    closeGame.textContent = 'Close'
 }
 
 function showWinPanel(){
@@ -317,6 +258,7 @@ function showWinPanel(){
     header.remove();
     deck.remove();
     scorePanel.remove();
+    winPanel.style.display = 'block';
     parent.appendChild(winPanel);
 }
 
