@@ -1,4 +1,5 @@
 // Main Objects to work with
+const body = document.querySelector('body');
 const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
 const header = document.querySelector('.header');
@@ -16,7 +17,9 @@ const movesOutput = document.querySelector('.moves');
 const restartBtn = document.querySelector('.restart');
 
 const winPanel = document.querySelector('#winPanel');
-const winPanelText = document.createElement('p');
+const winPanelStars = document.createElement('h1');
+const winPanelMoves = document.createElement('h2');
+const winPanelTime = document.createElement('h3');
 const playAgain = document.createElement('button');
 const closeGame = document.createElement('button');
 
@@ -224,7 +227,6 @@ function createCard(faIcon){
     Win Page with output
 */
 function createWinPanel(){
-
     const modalContent = document.createElement('div');
     const spanClose = document.createElement('span');
 
@@ -233,12 +235,19 @@ function createWinPanel(){
 
     spanClose.classList.add('close');
     modalContent.appendChild(spanClose);
-    winPanelText.id = 'winText';
-    modalContent.appendChild(winPanelText);
+
+    winPanelStars.id = 'winStars';
+    modalContent.appendChild(winPanelStars);
+
+    winPanelMoves.id = 'winMoves';
+    modalContent.appendChild(winPanelMoves);
+
+    winPanelTime.id = 'winTime';
+    modalContent.appendChild(winPanelTime);
+
     playAgain.id = "playBtn";
     modalContent.appendChild(playAgain);
-    closeGame.id = "closeBtn";
-    modalContent.appendChild(closeGame);
+
     winPanel.id = 'winPanel';
     winPanel.classList.add('animated', 'flash');
     winPanel.classList.add('container');
@@ -246,8 +255,9 @@ function createWinPanel(){
 
 function updateWinPanel(){
 
-    winPanelText.textContent = `You received ${starCount} Star in ` +
-        `${moveCounter} Moves in ${min}:${sec} seconds!`;
+    winPanelStars.textContent = `You received ${starCount} Stars!`;
+    winPanelMoves.textContent = `It took you ${moveCounter} Moves`;
+    winPanelTime.textContent = `Your time was ${min} minute and ${sec} seconds!`;
     playAgain.textContent = `Play Again?`;
     closeGame.textContent = 'Close'
 }

@@ -148,36 +148,43 @@ header p {
 *   Styles for the Win Output
 */
 #winPanel {
+    width: 100%;
     color: #eaecc6;
     display: none;
     justify-content: center;
     align-self: center;
     flex-wrap: wrap;
     text-align: center;
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
 }
 
-#winPanel #winText {
+#winPanel #winStars {
     font-size: 2em;
+    text-align: center;
+    line-height: 2;
+    color: #168fad;
+}
+
+#winPanel #winMoves {
+    font-size: 1.75em;
+    text-align: center;
+    line-height: 2;
+}
+
+#winPanel #winTime {
+    font-size: 1.75em;
     text-align: center;
     line-height: 2;
 }
 
 #winPanel #playBtn {
     align-self: center;
-    background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
+    background: #168fad;
     color: #fff;
     width: 50%;
     padding: 10px 15px;
     font-size: 2em;
-}
-
-#winPanel #closeBtn {
-    align-self: center;
-background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
-    color: #fff;
-    width: 50%;
-    padding: 10px 15px;
-    font-size: 2em;
+    border-radius: .25em;
 }
 
 /* The Modal (background) */
@@ -190,7 +197,6 @@ background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -199,6 +205,7 @@ background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 1em;
     width: 80%; /* Could be more or less, depending on screen size */
     color: black;
 }
