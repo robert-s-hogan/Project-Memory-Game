@@ -164,7 +164,7 @@ header p {
 
 #winPanel #playBtn {
     align-self: center;
-    background: #2bc0e4;
+    background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
     color: #fff;
     width: 50%;
     padding: 10px 15px;
@@ -173,7 +173,7 @@ header p {
 
 #winPanel #closeBtn {
     align-self: center;
-    background: #e44f2b;
+background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
     color: #fff;
     width: 50%;
     padding: 10px 15px;
