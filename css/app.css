@@ -171,15 +171,6 @@ header p {
     line-height: 2;
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 768px) {
-    
-}
-
-@media screen and (min-width: 1024px) {
-||||||| merged common ancestors
-@media screen and (min-width: 1024px) {
-=======
 #winPanel #winTime {
     font-size: 1.75em;
     text-align: center;
@@ -226,15 +217,12 @@ header p {
     font-size: 28px;
     font-weight: bold;
 }
->>>>>>> gh-pages
-
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-
 
 @media screen and (min-width: 768px) {
     header h1 {
