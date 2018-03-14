@@ -1,10 +1,12 @@
 // Main Objects to work with
+const body = document.querySelector('body');
 const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
-const header = document.querySelector('.header')
+const header = document.querySelector('.header');
+const desc = document.querySelector('.description');
 
 /*
-Clock Objects & Score Panel Output
+    Clock Objects & Score Panel Output
 */
 const timerOutput = document.querySelector('#timer');
 const clock = document.createElement('div');
@@ -14,13 +16,15 @@ const scorePanel = document.querySelector('.score-panel');
 const movesOutput = document.querySelector('.moves');
 const restartBtn = document.querySelector('.restart');
 
-
-const winPanel = document.createElement('div');
-const winPanelHeader = document.createElement('h2');
-const winPanelText = document.createElement('p');
+const winPanel = document.querySelector('#winPanel');
+const winPanelStars = document.createElement('h1');
+const winPanelMoves = document.createElement('h2');
+const winPanelTime = document.createElement('h3');
+const playAgain = document.createElement('button');
+const closeGame = document.createElement('button');
 
 /*
-Variables & Arrays
+    Variables & Arrays
 */
 let cards = [];
 const openCards = [];
@@ -32,7 +36,7 @@ let starElement = scorePanel.querySelectorAll('i');
 let starCount = 3;
 
 /*
-Clock Variables
+    Clock Variables
 */
 let start = 0;
 let currentTime = 0;
@@ -40,15 +44,15 @@ let min = 0;
 let sec = 0;
 
 /*
-Main Event Listener
+    Main Event Listener
 */
 deck.addEventListener('click', function(e){
 let cardClicked;
 
     // Check to see if the card area was clicked
-    if(e.target.nodeName == "LI") { 
+    if(e.target.nodeName == 'LI') {
         cardClicked = e.target;
-    } else if (e.target.nodeName == "I") { 
+    } else if (e.target.nodeName == 'I') {
         cardClicked = e.target.parentElement;
     } else {
         return; // If there is a click outside of the card area
@@ -56,18 +60,14 @@ let cardClicked;
 
     // Start Clock
     if(start < 1) {
-        startTimer()
-    ;}
+        startTimer();
+    }
 
     // Ignore click if Card has been matched
-    if(cardClicked.classList.contains('match')) { 
-        return; 
-    }
+    if(cardClicked.classList.contains('match')) { return;}
 
     // Ignore double-clicks and self matches
-    if(openCards.length > 0 && cardClicked === openCards[0]){
-        return;
-    }
+    if(openCards.length > 0 && cardClicked === openCards[0]){ return;}
 
     // Start new pair and reset previous clicks
     if(timeout != null){
@@ -108,6 +108,8 @@ restartBtn.addEventListener('click', function(event){
     }
     
     stopTimer();
+
+    clearOpenArray();
     gameInit();
 });
 
@@ -164,9 +166,9 @@ function setMatchingCards(){
 }
 
 /*
-  Rejects Cards with Animation then Hides Cards  
+    Rejects Cards with Animation then Hides Cards
 */
-function badMatch() {
+function badMatch(){
 
     for(let i = 0; i < openCards.length; i++){
         openCards[i].classList.add('animated', 'jello');
@@ -195,7 +197,7 @@ function createArrayOfCards(){
 
     cards = [];
     // All Font Awesome Icons For Card Creation
-    const cardTypes = ["fa-bomb", "fa-paper-plane-o", "fa-diamond", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle"];
+    const cardTypes = ['fa-bomb', 'fa-paper-plane-o', 'fa-diamond', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle'];
 
     // Add 2 of Each Type of Card to Deck
     for(let i = 0; i < cardTypes.length; i++){
@@ -205,14 +207,14 @@ function createArrayOfCards(){
 }
 
 /*
-    Creates Individual Card with New Elements and "fa" class in the I Class
+    Creates Individual Card with New Elements and 'fa' class in the I Class
 */
 function createCard(faIcon){
 
-    var cardElement = document.createElement("li");
+    let cardElement = document.createElement('li');
     cardElement.classList.add('card');
 
-    var faDefault = document.createElement("i");
+    let faDefault = document.createElement('i');
     faDefault.classList.add('fa');
 
     faDefault.classList.add(faIcon);
@@ -225,20 +227,39 @@ function createCard(faIcon){
     Win Page with output
 */
 function createWinPanel(){
+    const modalContent = document.createElement('div');
+    const spanClose = document.createElement('span');
 
-    winPanelHeader.textContent = "You win!";
-    winPanelHeader.id = 'winHeader';
-    winPanel.appendChild(winPanelHeader);
-    winPanelText.id = 'winText';
-    winPanel.appendChild(winPanelText);
-    winPanel.id = 'winId';
-    winPanel.classList.add("animated", "flash");
+    modalContent.classList.add('modal-content');
+    winPanel.appendChild(modalContent);
+
+    spanClose.classList.add('close');
+    modalContent.appendChild(spanClose);
+
+    winPanelStars.id = 'winStars';
+    modalContent.appendChild(winPanelStars);
+
+    winPanelMoves.id = 'winMoves';
+    modalContent.appendChild(winPanelMoves);
+
+    winPanelTime.id = 'winTime';
+    modalContent.appendChild(winPanelTime);
+
+    playAgain.id = "playBtn";
+    modalContent.appendChild(playAgain);
+
+    winPanel.id = 'winPanel';
+    winPanel.classList.add('animated', 'flash');
     winPanel.classList.add('container');
 }
 
 function updateWinPanel(){
 
-    winPanelText.textContent = `You received ${starCount} stars and it took you ${moveCounter} moves! Click Anywhere to Play Again!`;
+    winPanelStars.textContent = `You received ${starCount} Stars!`;
+    winPanelMoves.textContent = `It took you ${moveCounter} Moves`;
+    winPanelTime.textContent = `Your time was ${min} minute and ${sec} seconds!`;
+    playAgain.textContent = `Play Again?`;
+    closeGame.textContent = 'Close'
 }
 
 function showWinPanel(){
@@ -247,6 +268,7 @@ function showWinPanel(){
     header.remove();
     deck.remove();
     scorePanel.remove();
+    winPanel.style.display = 'block';
     parent.appendChild(winPanel);
 }
 
@@ -264,7 +286,7 @@ function resetGameElementsAfterWin(){
 function createClock(){
 
     timeInMin.textContent = min;
-    timeInSec.textContent = sec + "0";
+    timeInSec.textContent = sec + '0';
 
     let timerSpacer = document.createElement('span');
     timerSpacer.textContent = ':';
@@ -298,15 +320,15 @@ function updateTimer(){
     min = (totalSeconds > 60) ? Math.floor(totalSeconds/60) : 0;
 
     // Update Time to Clock
-    timerOutput.classList.add("animated", "pulse");
-    timerOutput.style.color = "#d13e36";
-    timeInSec.textContent = (sec < 10) ? "0" + sec : sec;
+    timerOutput.classList.add('animated', 'pulse');
+    timerOutput.style.color = '#d13e36';
+    timeInSec.textContent = (sec < 10) ? '0' + sec : sec;
     timeInMin.textContent = min;
 }
 
 function clearTimer(){
-    timeInMin.textContent = "0";
-    timeInSec.textContent = "00";
+    timeInMin.textContent = '0';
+    timeInSec.textContent = '00';
 }
 
 /*
@@ -366,17 +388,17 @@ function numOfMoves(){
     movesOutput.textContent = moveCounter;
 
     if(moveCounter === 15){
-        starCount = 2;
+        starCount = 3;
         toggleStarsOff(2);
     }
 
     if(moveCounter === 20){
-        starCount = 1;
+        starCount = 2;
         toggleStarsOff(1);
     }
 
     if(moveCounter === 25){
-        starCount = 0;
+        starCount = 1;
         toggleStarsOff(0);
     }
 }
@@ -389,7 +411,7 @@ function toggleStarsOff(index){
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
 
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
 
@@ -407,5 +429,3 @@ function shuffle(array) {
 createWinPanel();
 createClock();
 gameInit();
-
-

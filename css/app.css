@@ -37,6 +37,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
 }
 
@@ -60,19 +61,23 @@ header p {
 .deck {
     height: 400px;
     background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
-    padding: 1em;
+    padding: 0 1%;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1em;
+    margin: 0 1em 1em;
+    max-width: 375px;
 }
 
 .deck .card {
-    height: 70px;
-    width: 70px;
+    min-height: 70px;
+    min-width: 70px;
+    height: 21%;
+    flex: 1 1 21%;
+    margin: 0 1%;
     background: #168fad;
     font-size: 0;
     color: #ffffff;
@@ -82,6 +87,10 @@ header p {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck:before {
+    content: "";
 }
 
 .deck .card:hover {
@@ -112,7 +121,6 @@ header p {
 .score-panel {
     display: inline-flex;
     justify-content: space-between;
-    text-align: left;
     width: 345px;
     padding: 0 2em;
 }
@@ -139,81 +147,164 @@ header p {
 /*
 *   Styles for the Win Output
 */
-#winId {
-    background-color: #168FAD;
+#winPanel {
+    width: 100%;
     color: #eaecc6;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    display: none;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
     text-align: center;
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
 }
 
-#winHeader {
-    font-size: 6em;
-    padding: 1em;
+#winPanel #winStars {
+    font-size: 2em;
+    text-align: center;
+    line-height: 2;
+    color: #168fad;
 }
 
-#winText {
-    font-size: 3em;
+#winPanel #winMoves {
+    font-size: 1.75em;
     text-align: center;
     line-height: 2;
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 768px) {
     
 }
 
 @media screen and (min-width: 1024px) {
+||||||| merged common ancestors
+@media screen and (min-width: 1024px) {
+=======
+#winPanel #winTime {
+    font-size: 1.75em;
+    text-align: center;
+    line-height: 2;
+}
 
+#winPanel #playBtn {
+    align-self: center;
+    background: #168fad;
+    color: #fff;
+    width: 50%;
+    padding: 10px 15px;
+    font-size: 2em;
+    border-radius: .25em;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 1em;
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: black;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+>>>>>>> gh-pages
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 768px) {
+    header h1 {
+        font-size: 4em;
+    }
+    header p {
+        font-size: 1.5em;
+        margin-bottom: .5em;
+    }
+    .score-panel {
+        width: 475px;
+    }
+    .score-panel .stars,
+    .score-panel .restart  {
+        font-size: 2em;
+    }
+    .score-panel #moves,
+    .score-panel #timer {
+        font-size: 2em;
+    }
     .deck {
-        width: 630px;
-        min-height: 650px;
-        background: linear-gradient(160deg, #2bc0e4 0%, #eaecc6 100%);
-        padding: 32px;
-        border-radius: 10px;
-        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 0 2em;
+        height: 675px;
+        margin: 0 1em 1em;
+        max-width: 768px;
     }
-
     .deck .card {
-        height: 125px;
-        width: 125px;
-        background: #168fad;
-        font-size: 0;
-        color: #ffffff;
-        border-radius: 8px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+        min-height: 145px;
+        min-width: 145px;
+        height: 21%;
+        flex: 1 1 21%;
+        margin: 0 1%;
     }
-
-    .deck .card:hover {
-        background-color: #eaecc6;
-    }
-
-    .deck .card.open {
-        transform: rotateY(0);
-        background: #2b64e4;
-        cursor: default;
-        color: #eaecc6;
-    }
-
     .deck .card.show {
-        font-size: 40px;
+        font-size: 50px;
     }
+}
 
-    .deck .card.match {
-        cursor: default;
-        background: linear-gradient(160deg, #e44f2b 0%, #FFBD99 100%);
-        font-size: 45px;
+@media screen and (min-width: 1024px) {
+    header h1 {
+        font-size: 4em;
+    }
+    header p {
+        font-size: 1.75em;
+        margin-bottom: 1em;
+    }
+    .score-panel {
+        width: 605px;
+        margin-bottom: 1em;   
+    }
+    .score-panel .stars,
+    .score-panel .restart  {
+        font-size: 2em;
+    }
+    .score-panel #moves,
+    .score-panel #timer {
+        font-size: 2em;
+    }
+    .deck {
+        height: 825px;
+        margin: 0 1.25em 1.25em;
+        max-width: 1024px;
+    }
+    .deck .card {
+        min-height: 175px;
+        min-width: 175px;
+        height: 21%;
+        flex: 1 1 21%;
+        margin: 0 1%;
+    }
+    .deck .card.show {
+        font-size: 80px;
     }
 }
