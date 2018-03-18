@@ -172,6 +172,7 @@ header p {
     line-height: 2;
 }
 
+<<<<<<< HEAD
 #winPanel #winTime {
     font-size: 1.75em;
     text-align: center;
@@ -215,6 +216,7 @@ header p {
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
