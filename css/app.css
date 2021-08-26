@@ -177,7 +177,6 @@ header p {
     line-height: 2;
 }
 
-<<<<<<< HEAD
 #winPanel #winTime {
     font-size: 1.75em;
     text-align: center;
@@ -207,7 +206,7 @@ header p {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% autol
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 1em;
