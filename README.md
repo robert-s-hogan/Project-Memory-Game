@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-* [My Process](#my-process)
+<!-- * [My Process](#my-process) -->
 * [How to Run](#how-to-run)
 * [How to Play](#how-to-play)
 * [Known Issues](#known-issues)
@@ -11,9 +11,9 @@
 * [How to Contribute](#how-to-contribute)
 
 
-## My Process
+<!-- ## My Process
 - To read my thoughts and issues going through the completion of the Project Memory Game go [here](http://www.robertshogan.com/blog/2018/03/02/udacity-project-memory-game/)
-
+ -->
 ## How to Run
 1. Download Zip File or Clone Repository
 - Then Open `index.html` 
