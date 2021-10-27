@@ -26,7 +26,7 @@
 4. Rinse and Repeat :video_game:
 
 ## Known Issues
-- Game still in development
+- If you find anything, please don't hesitate to create a pull request!
 
 ## Improvements
 - Add an function to get half stars too
