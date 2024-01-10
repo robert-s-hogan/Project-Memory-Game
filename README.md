@@ -2,7 +2,7 @@
 
 Welcome to my GitHub Memory Game Project! This interactive and fun game is designed to test and improve your memory skills. Check out the working version [here](https://robert-s-hogan.github.io/Project-Memory-Game/).
 
-![Memory Game Screenshot or GIF](https://giphy.com/embed/edUKk5u6lRir7ewN5M)
+![Memory Game Screenshot or GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTVrbjdxOTYxbmFtY3F4amdrMjA5ZXV2MjhmeGE5ZjJzb2Z3YzVxaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/edUKk5u6lRir7ewN5M/giphy.gif)
 
 ## Table of Contents
 * [How to Run](#how-to-run)
