@@ -1,14 +1,17 @@
 # Memory Game Project
-- To see a working version of the project go [here](https://robert-s-hogan.github.io/Project-Memory-Game/)
+
+Welcome to my GitHub Memory Game Project! This interactive and fun game is designed to test and improve your memory skills. Check out the working version [here](https://robert-s-hogan.github.io/Project-Memory-Game/).
+
+![Memory Game Screenshot or GIF](link-to-screenshot-or-gif)
 
 ## Table of Contents
-
-<!-- * [My Process](#my-process) -->
 * [How to Run](#how-to-run)
 * [How to Play](#how-to-play)
+* [Technologies Used](#technologies-used)
 * [Known Issues](#known-issues)
 * [Improvements](#improvements)
 * [How to Contribute](#how-to-contribute)
+* [License](#license)
 
 
 <!-- ## My Process
